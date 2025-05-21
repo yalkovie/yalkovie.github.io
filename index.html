@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>STUDYHUB</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <p class="txt">STUDYHUB</p>
+            <p class="btn-menu"><a class="txt">Главная</a></p>
+            <p class="btn-menu"><a class="txt" href="/oge.html">ОГЭ</a></p>
+            <p class="btn-menu"><a class="txt" href="/ege.html">ЕГЭ</a></p>
+            <p class="btn-menu"><a class="txt" href="/vpr.html">ВПР</a></p>
+            <p class="btn-menu"><a class="txt" href="#contact">Контакты/О сайте</a></p>
+            <div id="theme"></div>
+        </nav>
+        <h1 class="txt-dif">Готовься к экзаменам легко</h1>
+        <p id="header_desc" class="txt-dif">Вся теория для ОГЭ, ЕГЭ и ВПР в одном месте</p>
+        <a href="#main"><button id="first_btn" class="txt">Начать готовиться</button></a>
+        <h1 id="max">Набери максимум</h1>
+    </header>
+    <section>
+        <h1>Почему мы?</h1>
+        <div id="group">
+            <div><img src="/book.svg"><p class="txt">Полная теория</p></div>
+            <div><img src="/free.svg"><p class="txt">Бесплатно</p></div>
+            <div><img src="/compass.svg"><p class="txt">Удобная навигация</p></div>
+            <div><img src="/beauty.svg"><p class="txt">Красивый дизайн</p></div>
+        </div>
+        
+    </section>
+    <main id="main">
+        <h1 class="txt-dif">Начни сейчас</h1>
+        <div id="box">
+            <div id="oge_box" class="card">
+                <h1 class="ttl txt-dif">ОГЭ</h1>
+                <p class="disc txt-dif">Основной государственный экзамен — для 9 класса. Готовься по всем предметам: теория, формулы, примеры.</p>
+                <a href="/oge.html" class="btn"><button class="txt-dif btn_bg">Начать изучать</button></a>
+            </div>
+
+            <div id="ege_box" class="card">
+                <h1 class="ttl txt-dif">ЕГЭ</h1>
+                <p class="disc txt-dif">Единый государственный экзамен — для 11 класса. Полный курс подготовки с объяснениями и схемами.</p>
+                <a href="/ege.html" class="btn"><button class="txt-dif btn_bg">Начать изучать</button></a>
+            </div>
+
+            <div id="vpr_box" class="card">
+                <h1 class="ttl txt-dif">ВПР</h1>
+                <p class="disc txt-dif">Всероссийская проверочная работа — для 4–11 классов. Смотри теорию и примеры заданий по каждому предмету.</p>
+                <a href="/vpr.html" class="btn"><button class="txt-dif btn_bg">Начать изучать</button></a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <h1 class="txt-dif">Контакты</h1>
+        <div id="conteiner">
+            <p class="txt-dif">+7-ххх-ххх-хх-хх</p>
+            <p id="mail" class="txt-dif">examplemail@mail.ru</p>
+            <p class="txt-dif">@studyhub</p>
+        </div>
+        <p class="txt-dif">© 2025 SUDYHUB</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        // Переменные
+        const theme_btn = document.querySelector('#theme');
+        const txt = document.querySelectorAll('.txt');
+        const txt_dif = document.querySelectorAll('.txt-dif');
+        const btn_bg = document.querySelectorAll('.btn_bg');
+        const img = document.querySelectorAll('img');
+        let DARK_THEME = true;
+        let cards = document.querySelectorAll('.card');
+        let titles = document.querySelectorAll('.ttl');
+        let dicriptions = document.querySelectorAll('.disc');
+        let btns = document.querySelectorAll('.btn');
+        let first_btn = document.querySelector('#first_btn')
+
+        // Смена темы
+        theme_btn.addEventListener('click', () => {
+            if (DARK_THEME) {
+                txt.forEach(el => {
+                    el.style.color = '#ffffff'
+                    el.style.borderColor = '#ffffff'
+                });
+                txt_dif.forEach(el => {
+                    el.style.color = '#000000'
+                });
+                btn_bg.forEach(el => {
+                    el.style.backgroundColor = '#ffffff'
+                });
+                img.forEach(el => {
+                    el.style.filter = 'invert(100%)';
+                })
+                theme_btn.style.backgroundColor = '#ffffff';
+                theme_btn.style.backgroundImage = 'url(/icon/moon.svg)';
+                document.body.style.backgroundColor = '#ffffff';
+                document.querySelector('nav').style.color = '#ffffff';
+                document.querySelector('section').style.backgroundColor = '#f4f4f4';
+                document.querySelector('footer').style.backgroundColor = '#f4f4f4';
+                DARK_THEME = false;
+            } else {
+                txt.forEach(el => {
+                    el.style.color = '#000000'
+                    el.style.borderColor = '#000000'
+                });
+                txt_dif.forEach(el => {
+                    el.style.color = '#ffffff'
+                });
+                btn_bg.forEach(el => {
+                    el.style.backgroundColor = '#000000'
+                });
+                img.forEach(el => {
+                    el.style.filter = 'invert(0%)';
+                })
+                theme_btn.style.backgroundColor = '#000000';
+                theme_btn.style.backgroundImage = 'url(/sun.svg)';
+                document.body.style.backgroundColor = '#000000';
+                document.querySelector('nav').style.color = '#000000';
+                document.querySelector('section').style.backgroundColor = '#1e1e1e';
+                document.querySelector('footer').style.backgroundColor = '#1e1e1e';
+                DARK_THEME = true;
+            }
+
+        })
+
+        // Анимация
+        first_btn.addEventListener('mouseover', () => {
+            first_btn.style.transition = 'all 0.25s ease-in-out';
+            first_btn.style.transform = 'scale(1.05)'
+        })
+
+        first_btn.addEventListener('mouseout', () => {
+            first_btn.style.transition = 'all 0.25s ease-in-out';
+            first_btn.style.transform = 'scale(1)';
+        })
+
+        cards.forEach((card, index) => {
+            const title = titles[index];
+            const dicription = dicriptions[index];
+            const btn = btns[index];
+            
+
+            card.addEventListener('mouseover', () => {
+                title.style.transition = 'all 0.35s ease-out';
+                title.style.fontSize = '4rem';
+                title.style.transform = 'translateY(-5vh)';
+                dicription.style.display = 'block';
+                btn.style.display = 'block';
+            })
+
+            card.addEventListener('mouseout', () => {
+                title.style.transition = 'all 0.35s ease-out';
+                title.style.fontSize = '6rem';
+                title.style.transform = 'translateY(0)';
+                dicription.style.display = 'none';
+                btn.style.display = 'none';
+            })
+        })
+    </script>
+</body>
+</html>

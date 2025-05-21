@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/oge-ege-8_class-10_class.css">
+    <title>ЕГЭ</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <p>STUDYHUB</p>
+            <p class="btn-menu"><a href="/index.html">Главная</a></p>
+            <p class="btn-menu"><a href="/oge.html">ОГЭ</a></p>
+            <p class="btn-menu"><a href="/ege.html">ЕГЭ</a></p>
+            <p class="btn-menu"><a href="/vpr.html">ВПР</a></p>
+            <p class="btn-menu"><a href="#contact">Контакты/О сайте</a></p>
+            <div id="theme"></div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="txt-dif">ЕГЭ</h1>
+        <p class="txt-dif">Предметы:</p>
+        <div class="container">
+            <div class="parent">
+                <a href="#">
+                    <div class="div1 card">
+                        <img src="/RU.svg">
+                        <p class="txt-dif">Русский язык</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div2 card">
+                        <img src="/math.svg">
+                        <p class="txt-dif">Математика</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div3 card">
+                        <img src="/bio.svg">
+                        <p class="txt-dif">Биология</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div4 card">
+                        <img src="/chemistry.svg">
+                        <p class="txt-dif">Химия</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div5 card">
+                        <img src="/books.svg">
+                        <p class="txt-dif">Литература</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div6 card">
+                        <img src="/geography.svg">
+                        <p class="txt-dif">География</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div7 card">
+                        <img src="/informat.svg">
+                        <p class="txt-dif">Информатика</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div8 card">
+                        <img src="/history.svg">
+                        <p class="txt-dif">История</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div9 card">
+                        <img src="/obshestvo.svg">
+                        <p class="txt-dif">Обществознание</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div10 card">
+                        <img src="/phythic.svg">
+                        <p class="txt-dif">Физика</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div11 card">
+                        <img src="/EN.svg">
+                        <p class="txt-dif">Английский язык</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div12 card">
+                        <img src="/DE.svg">
+                        <p class="txt-dif">Немецкий язык</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div13 card">
+                        <img src="/FR.svg">
+                        <p class="txt-dif">Французский язык</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="div14 card">
+                        <img src="/SP.svg">
+                        <p class="txt-dif">Испанский язык</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <h1>Контакты</h1>
+        <div id="conteiner">
+            <p>+7-ххх-ххх-хх-хх</p>
+            <p id="mail">examplemail@mail.ru</p>
+            <p>@studyhub</p>
+        </div>
+        <p>© 2025 SUDYHUB</p>
+    </footer>
+
+    <script>
+        const theme_btn = document.querySelector('#theme');
+        const txt = document.querySelectorAll('.txt')
+        const txt_dif = document.querySelectorAll('.txt-dif')
+        let DARK_THEME = true;
+
+        theme_btn.addEventListener('click', () => {
+            if (DARK_THEME) {
+                txt_dif.forEach(el => {
+                    el.style.color = '#000000'
+                });
+                DARK_THEME = false;
+                document.querySelector('body').style.backgroundColor = '#ffffff';
+                document.querySelector('footer').style.backgroundColor = '#111111'
+                document.querySelectorAll('img').forEach(el => {
+                    el.style.filter = 'invert(100%)';
+                });
+                document.querySelectorAll('.card').forEach(el => {
+                    el.style.backgroundColor = '#f4f4f4'
+                });
+            } else {
+                txt_dif.forEach(el => {
+                    el.style.color = '#ffffff'
+                });
+                DARK_THEME = true;
+                document.querySelector('body').style.backgroundColor = '#000000';
+                document.querySelector('footer').style.backgroundColor = '#111111'
+                document.querySelectorAll('img').forEach(el => {
+                    el.style.filter = 'invert(0%)';
+                });
+                document.querySelectorAll('.card').forEach(el => {
+                    el.style.backgroundColor = '#111111'
+                });
+            }
+        })
+    </script>
+</body>
+</html>
